@@ -1,0 +1,10 @@
+; find perimeter of a square with given length
+ldc 0x1000
+a2sp
+ldc values
+ldnl 0
+ldc 2
+shl
+HALT
+values:
+data 10

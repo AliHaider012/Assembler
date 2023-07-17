@@ -1,0 +1,10 @@
+Error: label name label is used more than once  
+Error: label name 0def does not begin with an alphabet  
+Error: valid instruction not given at line 1
+Error: unknown symbol at line 5
+Error: unknown symbol at line 6
+Error: operand not given at line 7
+Error: add does not reuire aruments at line 8
+Error: unknown symbol at line 9
+Error: valid instruction not given at line 11
+Error: valid instruction not given at line 12

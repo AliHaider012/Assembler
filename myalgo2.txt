@@ -1,0 +1,24 @@
+; program for checking even and odd. A:=0 if odd and A:=1 if even
+ldc 0x1000
+a2sp
+ldc values
+ldnl 0
+ldc 1
+shr
+adj -1
+stl 0
+ldc values
+ldnl 0
+adc 1
+ldc 1
+shr
+ldl 0
+sub
+brz 2
+ldc 0
+HALT
+ldc 1
+HALT ;
+HALT ;
+values:
+data 43

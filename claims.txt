@@ -1,0 +1,177 @@
+/*****************************************************************************
+TITLE: Claims																											
+AUTHOR: ALI HAIDER
+ROLL NO.: 2101CS07
+Declaration of Authorship
+This txt file, claims.txt, is part of the assignment of CS210 at the 
+department of Computer Science and Engg, IIT Patna . 
+*****************************************************************************/
+Files:
+==========
+*All the files I submitted, asm.cpp and emu.cpp and claims.txt, have my name and student id at the start, along with a declaration of authorship.
+
+The evidence for Assembler including the output files from the eight test examples has also been uploaded. They are test1(3 output files), test2(3 output files), test3
+(3 output file), test4(3 output files), test5(3 output files), test6(3 output files), MyBubbleSort(3 output files). All the test files have been tested and work properly.
+
+*Both of my cpp programs did not show any errors and warnings when I compiled it with g++ -o file file.cpp
+
+*Two programs are compilable with g++ -o asm asm.cpp and g++ emu.cpp -o main.
+
+
+=============================
+Program format and structure:
+=============================
+1. The assembler:
+
+    * with two data structures symbol and literal tables to store respectively labels and mnemonic table with expected operands.
+    * uses a single routine for both passes.
+    * detects all types of errors given in the document
+    * consistent and sensible formatting with sensible program structure. 
+		* advanced listing file.
+		* assembles test programs.
+	  * can implement and demonstrate the instruction SET.
+
+2. The emulator :
+
+    * on opening the terminal it gives the list of words to get desired form of output
+    * with two data structures to store respectively memory, mnemonic table with expected operands
+    * loads object file, 
+    * by giving the instructions like "-before/-after" , the program can produce memory dump before/after execution.
+    * by giving the instruction like "-trace", the program prints the result of program executed.
+    * detects errant programs.
+
+
+=============================
+Testing:
+=============================
+
+1. The assembler:
+
+I have tested eight examples shown as bellow. The errors only occurred in the file test2.asm and the errors are logged and shown in terminal.
+
+The others were tested without any errors detected and produced three output files, listing file, 
+error log file and machine readable object file, for each example. 
+
+After comparing the listing files and object file of all test files
+with the implemented result given on the assignment, both of them show no difference 
+from those provided.
+ 
+
+1)
+#Input:./asm test01.txt
+#Output: 
+a. test01.l 
+b. test01.log (blank)
+c. test01.o
+
+2)
+#Input:./asm test02.txt
+#Output: 
+a. test02.l 
+b. test02.log
+c. test02.o
+
+error messages:
+Error: label name label is used more than once  
+Error: label name 0def does not begin with an alphabet  
+Error: valid instruction not given at line 1
+Error: unknown symbol at line 5
+Error: unknown symbol at line 6
+Error: operand not given at line 7
+Error: add does not require arguments at line 8
+Error: unknown symbol at line 9
+Error: valid instruction not given at line 11
+Error: valid instruction not given at line 12
+
+
+3)
+#Input:./asm test03.txt
+#Output: 
+a. test03.l 
+b. test03.log (no error)
+c. test03.o
+
+4)
+#Input:./asm test04.txt
+#Output: 
+a. test04.l 
+b. test04.log (no error)
+c. test04.o
+
+5)
+#Input:./asm test05.txt
+#Output: 
+a. test05.l 
+b. test05.log (no error)
+c. test05.o
+
+6)
+#Input:./asm myalgo1.txt
+#Output: 
+a. myalgo1.l 
+b. myalgo1.log (no error)
+c. myalgo1.o
+
+7)
+#Input:./asm BubbleSort.txt
+#Output: 
+a. BubbleSort.l 
+b. BubbleSort.log (no error)
+c. BubbleSort.o
+
+8)
+7)
+#Input:./asm myalgo2.txt
+#Output: 
+a. myalgo2.l 
+b. myalgo2.log (no error)
+c. myalgo2.o
+
+2. The emulator:
+
+I have tested eight examples shown as bellow. The errors only occurred in the file test1.o and 
+the program immediately stopped with an error message of infinite loop on the screen. 
+
+The others were tested without any errors detected and produced excution data both on the screen and 
+output trace file for each example according to the usage instruction. 
+
+1)
+#Input:./main -trace test01.o
+#Output: test01.TRACE
+
+Message(s):
+There is infinite loop at instruction 3
+3 instructions executed
+
+2)
+#Input:./main -after test02.o 
+#Output: test02.TRACE
+
+Instruction number 1 is not valid
+
+3)
+#Input:./main -after test03.o
+#Output: test03.TRACE
+
+2 instructions executed
+
+4)
+#Input:./main -after test04.o
+#Output: test04.TRACE
+
+47653 instructions executed
+
+5)
+#Input:./main -after myalgo1.o
+#Output: myalgo1.TRACE
+
+14 instructions executed
+
+6)
+#Input:./main -after BubbleSort.o
+#Output: BubbleSort
+
+7)
+#Input:./main -after myalgo2.o
+#Output: myalgo2.TRACE
+17 instructions executed
